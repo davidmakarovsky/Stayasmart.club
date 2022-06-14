@@ -13,8 +13,6 @@
         $txt = "You have received an e-mail from ".$aname.".\n\n"."Student Name: ".$cname.".\nGrade Level: ".$grade.".\nClass: ".$classType.".\n\n".$message;
 
         mail($mailTo, $subject, $txt, $headers);
+        header("Location: index.html?mailsent")
 
     }
-    echo "<script>window.location.href='index.html';</script>";
-    exit;
-?>
