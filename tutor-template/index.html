@@ -22,6 +22,35 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Alata', sans-serif;
 	color: #453e6e;
 }
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #15b28b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 3;
+}
 .banner-bg {
 	background-image: url(img/9-SCENE.svg);
 	background-repeat: no-repeat;
@@ -87,7 +116,6 @@ h1, h2, h3, h4, h5, h6 {
 	transition: all 0.3s ease;
 }
 .bg-tutor:hover {
-	cursor: pointer;
 	background-color: #15b28b;
 	color: #FFF;
 }
@@ -131,6 +159,7 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-transform: rotate(-22deg);
 	-ms-transform: rotate(-22deg);
 	transform: rotate(-22deg);
+  z-index: -1;
 }
 .img-radius img {
 	border-top-right-radius: 50px;
@@ -216,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
       </div>
       <div class="col-md-4 col-lg-3 pb-4">
         <div class="p-4 bg-tutor rounded"> <i class="lni lni-library"></i>
-          <h6 class="font-weight-bold mb-0 pt-3">History</h6>
+          <h6 class="font-weight-bold mb-0 pt-3">Summer Homework</h6>
         </div>
       </div>
       <div class="col-md-4 col-lg-3 pb-4">
@@ -224,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
           <h6 class="font-weight-bold mb-0 pt-3">Programming</h6>
         </div>
       </div>
-      <div class="col-md-4 col-lg-3 pb-4">
+      <!-- <div class="col-md-4 col-lg-3 pb-4">
         <div class="p-4 bg-tutor rounded"> <i class="lni lni-layers"></i>
           <h6 class="font-weight-bold mb-0 pt-3">Art</h6>
         </div>
@@ -248,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
         <div class="p-4 bg-tutor rounded"> <i class="lni lni-bulb"></i>
           <h6 class="font-weight-bold mb-0 pt-3">Physics</h6>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   </div>
@@ -317,11 +346,11 @@ h1, h2, h3, h4, h5, h6 {
     <div class="container pb-5">
       <div class="row">
         <div class="col-12 text-center">
-          <h6 class="text-warning mb-3">04. Our happy Students</h6>
-          <h2 class="font-weight-bold mb-5 pb-3">Don't just take it from us. </h2>
+          <h6 class="text-warning mb-3">04. Contact Us</h6>
+          <h2 class="font-weight-bold mb-5 pb-3">Sign up for the classes using the form below.</h2>
         </div>
       </div>
-      <div class="row testimonials owl-theme owl-carousel">
+      <!-- <div class="row testimonials owl-theme owl-carousel">
         <div class="p-5">
         <div class="d-flex align-items-end mb-5">
           <div class="img-radius"> <img src="https://annedece.sirv.com/Images/pexels-andrea-piacquadio-762020%20(1).jpg"> </div>
@@ -358,6 +387,33 @@ h1, h2, h3, h4, h5, h6 {
           <h5 class="font-weight-bold">Richard</h5>
           <p>Student</p>
         </div>
+      </div> -->
+      <div class="container">
+        <form action="contact.php" method="post">
+          <label for="aname">Your First and Last Name</label>
+          <input type="text" id="aname" name="aname" placeholder="Your name.." required>
+
+          <label for="cname">First and Last Name of Your Child</label>
+          <input type="text" id="cname" name="cname" placeholder="Your child's name.." required>
+      
+          <label for="grade">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+          <label for="grade">Grade Level (put upcoming grade if school year has ended)</label>
+          <input type="text" id="grade" name="grade" placeholder="Your child's current grade level.." required>
+      
+          <label for="classType">Class</label>
+          <select id="classType" name="classType" required>
+            <option value="math">Math</option>
+            <option value="summerhomework">Summer Homework</option>
+            <option value="python">Python(Programming)</option>
+          </select>
+      
+          <label for="message">More Details</label>
+          <textarea id="message" name="message" placeholder="Tell us what you want to achieve with these classes and a bit about your child.." style="height:200px" required></textarea>
+      
+          <button class="btn btn-success" type="submit" name="submit">Submit</button>
+        </form>
       </div>
       <div class="shape-four"></div>
     </div>
